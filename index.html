@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ndenzisizwe Holdings (Pty) Ltd — Mining, Plant &amp; Industrial Services</title>
 <meta name="description" content="Ndenzisizwe Holdings (Pty) Ltd — Mining &amp; plant maintenance, industrial supplies, production &amp; packaging materials, and supply chain &amp; logistics services across South Africa.">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,12 +22,18 @@
     --paper:#ECEFEA;
     --paper-2:#DFE4DC;
     --white:#FBFCFA;
-    --line: rgba(20,32,28,0.14);
-    --line-strong: rgba(20,32,28,0.3);
+    --line: rgba(20,32,28,0.12);
+    --line-strong: rgba(20,32,28,0.16);
 
     --display: 'Oswald', sans-serif;
     --body: 'Source Sans 3', sans-serif;
     --mono: 'IBM Plex Mono', monospace;
+
+    --radius: 10px;
+    --radius-sm: 6px;
+    --shadow-sm: 0 1px 3px rgba(20,32,28,0.06), 0 1px 2px rgba(20,32,28,0.04);
+    --shadow-md: 0 8px 24px rgba(20,32,28,0.08), 0 2px 6px rgba(20,32,28,0.04);
+    --shadow-lg: 0 24px 48px rgba(20,32,28,0.14), 0 8px 16px rgba(20,32,28,0.06);
   }
 
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -46,15 +54,16 @@
   h1,h2,h3,h4{font-family:var(--display); font-weight:600; letter-spacing:0.01em; line-height:1.08; text-transform:uppercase;}
 
   .eyebrow{
-    font-family:var(--mono);
+    font-family:var(--body);
+    font-weight:700;
     font-size:12.5px;
-    letter-spacing:0.14em;
+    letter-spacing:0.1em;
     text-transform:uppercase;
     color:var(--red);
     display:flex;
     align-items:center;
     gap:10px;
-    margin-bottom:14px;
+    margin-bottom:16px;
   }
   .eyebrow::before{
     content:"";
@@ -72,23 +81,23 @@
   /* ===== NAV ===== */
   header.site{
     position:sticky; top:0; z-index:50;
-    background:rgba(236,239,234,0.92);
-    backdrop-filter:blur(8px);
+    background:rgba(251,252,250,0.85);
+    backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
   .nav{
     display:flex; align-items:center; justify-content:space-between;
-    padding:14px 0;
+    padding:16px 0;
   }
   .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
-  .brand img{height:44px; width:auto;}
-  .brand-text{font-family:var(--mono); font-size:12px; letter-spacing:0.08em; color:var(--ink-soft); display:none;}
-  nav.links{display:flex; gap:28px; align-items:center;}
+  .brand img{height:42px; width:auto;}
+  .brand-text{font-family:var(--body); font-weight:600; font-size:13px; letter-spacing:0.03em; color:var(--ink); display:none;}
+  nav.links{display:flex; gap:32px; align-items:center;}
   nav.links a{
-    font-family:var(--mono);
-    font-size:12.5px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
+    font-family:var(--body);
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:0.01em;
     text-decoration:none;
     color:var(--ink-soft);
     padding:6px 0;
@@ -97,15 +106,17 @@
   }
   nav.links a:hover{color:var(--ink); border-color:var(--red);}
   .call-btn{
-    font-family:var(--mono); font-size:12.5px; letter-spacing:0.06em;
+    font-family:var(--body); font-weight:600; font-size:14px;
     background:var(--ink); color:var(--white);
-    padding:10px 18px;
+    padding:11px 20px;
     text-decoration:none;
     border:1px solid var(--ink);
+    border-radius:var(--radius-sm);
     white-space:nowrap;
+    transition:background 0.15s, transform 0.15s;
   }
-  .call-btn:hover{background:var(--red); border-color:var(--red);}
-  .menu-toggle{display:none; background:none; border:1px solid var(--line-strong); padding:8px 10px; font-family:var(--mono); font-size:13px;}
+  .call-btn:hover{background:var(--red); border-color:var(--red); transform:translateY(-1px);}
+  .menu-toggle{display:none; background:none; border:1px solid var(--line-strong); border-radius:var(--radius-sm); padding:8px 12px; font-family:var(--body); font-weight:600; font-size:13px;}
 
   @media (max-width:860px){
     nav.links{
@@ -125,12 +136,12 @@
   /* ===== HERO ===== */
   .hero{
     position:relative;
-    padding:64px 0 56px;
+    padding:88px 0 76px;
     overflow:hidden;
     border-bottom:1px solid var(--line);
     background:
-      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(20,32,28,0.05) 39px, rgba(20,32,28,0.05) 40px),
-      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(20,32,28,0.05) 39px, rgba(20,32,28,0.05) 40px);
+      radial-gradient(ellipse 900px 500px at 85% -10%, rgba(63,107,51,0.07), transparent),
+      radial-gradient(ellipse 700px 500px at -10% 110%, rgba(200,16,46,0.05), transparent);
   }
   .hero-grid{
     display:grid;
@@ -139,57 +150,60 @@
     align-items:start;
   }
   .hero h1{
-    font-size:clamp(2.4rem, 5vw, 4rem);
-    margin-bottom:20px;
+    font-size:clamp(2.4rem, 5vw, 3.8rem);
+    margin-bottom:22px;
+    letter-spacing:0;
   }
   .hero h1 .accent{color:var(--red);}
   .hero p.lede{
-    font-size:1.1rem;
+    font-size:1.15rem;
     max-width:46ch;
     color:var(--ink-soft);
-    margin-bottom:28px;
+    margin-bottom:32px;
+    line-height:1.65;
   }
   .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:8px;}
   .btn{
-    font-family:var(--mono); font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
-    padding:14px 24px;
+    font-family:var(--body); font-weight:600; font-size:15px; letter-spacing:0.01em;
+    padding:15px 28px;
     text-decoration:none;
     display:inline-block;
     border:1px solid var(--ink);
-    transition:background 0.15s, color 0.15s, border-color 0.15s;
+    border-radius:var(--radius-sm);
+    transition:background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s, box-shadow 0.15s;
   }
-  .btn.primary{background:var(--red); color:var(--white); border-color:var(--red);}
-  .btn.primary:hover{background:var(--red-dark); border-color:var(--red-dark);}
-  .btn.ghost{background:transparent; color:var(--ink);}
-  .btn.ghost:hover{background:var(--ink); color:var(--white);}
+  .btn.primary{background:var(--red); color:var(--white); border-color:var(--red); box-shadow:var(--shadow-sm);}
+  .btn.primary:hover{background:var(--red-dark); border-color:var(--red-dark); transform:translateY(-1px); box-shadow:var(--shadow-md);}
+  .btn.ghost{background:var(--white); color:var(--ink);}
+  .btn.ghost:hover{background:var(--ink); color:var(--white); transform:translateY(-1px);}
 
   /* Nameplate block */
   .nameplate{
     background:var(--ink);
     color:var(--paper);
-    padding:26px 26px 22px;
+    padding:32px 30px 28px;
     position:relative;
-    border-left:6px solid var(--red);
-  }
-  .nameplate::before{
-    content:"";
-    position:absolute; top:14px; right:14px;
-    width:10px; height:10px;
-    border-radius:50%;
-    background:var(--yellow);
-    box-shadow:0 0 0 3px rgba(242,183,5,0.25);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-lg);
   }
   .nameplate .np-label{
-    font-family:var(--mono); font-size:11px; letter-spacing:0.14em;
-    color:var(--green-soft); text-transform:uppercase; margin-bottom:16px;
+    font-family:var(--body); font-weight:600; font-size:12px; letter-spacing:0.08em;
+    color:var(--green-soft); text-transform:uppercase; margin-bottom:18px;
+    display:flex; align-items:center; gap:9px;
+  }
+  .nameplate .np-label::before{
+    content:"";
+    width:7px; height:7px; border-radius:50%;
+    background:var(--yellow);
+    box-shadow:0 0 0 3px rgba(242,183,5,0.2);
   }
   .nameplate dl{
-    display:grid; grid-template-columns:auto 1fr; gap:8px 14px;
-    font-family:var(--mono); font-size:13px;
+    display:grid; grid-template-columns:auto 1fr; gap:11px 16px;
+    font-family:var(--body); font-size:14.5px;
   }
-  .nameplate dt{color:rgba(251,252,250,0.55); text-transform:uppercase; letter-spacing:0.06em; font-size:11px; align-self:start; padding-top:2px;}
+  .nameplate dt{color:rgba(251,252,250,0.5); letter-spacing:0.02em; font-size:12px; align-self:start; padding-top:2px; font-weight:600;}
   .nameplate dd{color:var(--white);}
-  .nameplate hr{border:none; border-top:1px solid rgba(251,252,250,0.18); margin:16px 0;}
+  .nameplate hr{border:none; border-top:1px solid rgba(251,252,250,0.14); margin:18px 0;}
 
   @media (max-width:860px){
     .hero-grid{grid-template-columns:1fr;}
@@ -210,10 +224,10 @@
     display:grid; grid-template-columns:1fr 1fr; gap:48px;
   }
   .about-grid p{color:var(--ink-soft); margin-bottom:16px; max-width:56ch;}
-  .stat-row{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-strong); border:1px solid var(--line-strong); margin-top:8px;}
-  .stat{background:var(--paper); padding:20px;}
+  .stat-row{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; margin-top:8px; box-shadow:var(--shadow-sm);}
+  .stat{background:var(--white); padding:22px;}
   .stat .num{font-family:var(--display); font-size:1.9rem; color:var(--red);}
-  .stat .label{font-family:var(--mono); font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); margin-top:4px;}
+  .stat .label{font-family:var(--body); font-weight:600; font-size:12px; letter-spacing:0.02em; color:var(--ink-soft); margin-top:4px;}
 
   @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} }
 
@@ -221,51 +235,55 @@
   .division{
     position:relative;
     background:var(--white);
-    border:1px solid var(--line-strong);
-    padding:32px 30px 30px;
-    margin-bottom:24px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+    padding:36px 36px 34px;
+    margin-bottom:20px;
+    border-top:3px solid var(--red);
+    transition:box-shadow 0.2s ease, transform 0.2s ease;
   }
-  .division::before,.division::after,
-  .division .br-tl, .division .br-br{
-    content:""; position:absolute; width:16px; height:16px;
-    border-color:var(--red); border-style:solid; border-width:0;
-  }
-  .division::before{ top:-1px; left:-1px; border-top-width:3px; border-left-width:3px; content:"";}
-  .division::after{ bottom:-1px; right:-1px; border-bottom-width:3px; border-right-width:3px; content:"";}
+  .division:hover{box-shadow:var(--shadow-md); transform:translateY(-2px);}
 
   .division-head{
-    display:flex; align-items:baseline; gap:16px; margin-bottom:6px; flex-wrap:wrap;
+    display:flex; align-items:center; gap:14px; margin-bottom:8px; flex-wrap:wrap;
   }
   .division-code{
-    font-family:var(--mono); font-size:13px; color:var(--red); letter-spacing:0.08em;
+    font-family:var(--body); font-weight:700; font-size:12.5px; color:var(--white);
+    background:var(--red); letter-spacing:0.04em;
+    padding:4px 10px; border-radius:20px;
   }
   .division h3{font-size:1.5rem;}
-  .division .tagline{color:var(--ink-soft); margin:10px 0 20px; max-width:60ch;}
+  .division .tagline{color:var(--ink-soft); margin:12px 0 24px; max-width:60ch; line-height:1.6;}
 
   .service-list{
     display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:10px 20px;
+    gap:12px 24px;
     list-style:none;
-    padding-top:10px;
-    border-top:1px dashed var(--line-strong);
+    padding-top:22px;
+    border-top:1px solid var(--line);
   }
   .service-list li{
     font-size:14.5px;
     color:var(--ink);
-    display:flex; align-items:flex-start; gap:8px;
-    padding:4px 0;
+    display:flex; align-items:flex-start; gap:9px;
+    padding:2px 0;
   }
   .service-list li::before{
     content:"";
-    width:6px; height:6px;
+    width:5px; height:5px;
+    border-radius:50%;
     background:var(--green);
     margin-top:8px; flex-shrink:0;
   }
 
   /* ===== ADDITIONAL CAPABILITIES ===== */
   .capabilities{
-    border:1px solid var(--line-strong);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
     background:var(--white);
+    box-shadow:var(--shadow-sm);
+    overflow:hidden;
   }
   .cap-item{border-bottom:1px solid var(--line);}
   .cap-item:last-child{border-bottom:none;}
@@ -273,16 +291,17 @@
     width:100%;
     display:flex; align-items:center; justify-content:space-between; gap:16px;
     background:none; border:none; cursor:pointer;
-    padding:20px 24px;
+    padding:22px 26px;
     font-family:var(--display); font-size:1.05rem; text-transform:uppercase;
     letter-spacing:0.02em;
     color:var(--ink);
     text-align:left;
+    transition:background 0.15s;
   }
-  .cap-toggle:hover{color:var(--red);}
-  .cap-toggle .idx{font-family:var(--mono); font-size:12px; color:var(--green); margin-right:14px;}
+  .cap-toggle:hover{color:var(--red); background:var(--paper);}
+  .cap-toggle .idx{font-family:var(--body); font-weight:700; font-size:13px; color:var(--green); margin-right:14px;}
   .cap-toggle .chev{
-    font-family:var(--mono); font-size:16px; color:var(--ink-soft);
+    font-family:var(--body); font-weight:400; font-size:20px; color:var(--ink-soft);
     transition:transform 0.2s ease;
     flex-shrink:0;
   }
@@ -311,8 +330,7 @@
   .safety .eyebrow::before{background:var(--yellow);}
   .badge-grid{
     display:grid; grid-template-columns:repeat(3,1fr);
-    gap:1px; background:rgba(251,252,250,0.14);
-    border:1px solid rgba(251,252,250,0.14);
+    gap:16px;
   }
   @media (max-width:760px){
     .badge-grid{grid-template-columns:repeat(2,1fr);}
@@ -321,16 +339,22 @@
     .badge-grid{grid-template-columns:1fr;}
   }
   .badge{
-    background:var(--ink); padding:22px 20px;
+    background:rgba(251,252,250,0.05);
+    border:1px solid rgba(251,252,250,0.1);
+    border-radius:var(--radius);
+    padding:24px 22px;
+    transition:background 0.2s ease, border-color 0.2s ease;
   }
+  .badge:hover{background:rgba(251,252,250,0.08); border-color:rgba(242,183,5,0.35);}
   .badge .mark{
-    width:34px; height:34px;
-    border:2px solid var(--yellow);
+    width:36px; height:36px;
+    border-radius:50%;
+    background:rgba(242,183,5,0.12);
     display:flex; align-items:center; justify-content:center;
-    font-family:var(--mono); color:var(--yellow); font-size:13px;
-    margin-bottom:14px;
+    color:var(--yellow); font-size:15px;
+    margin-bottom:16px;
   }
-  .badge p{font-size:14px; color:rgba(236,239,234,0.85); line-height:1.5;}
+  .badge p{font-size:14.5px; color:rgba(236,239,234,0.85); line-height:1.55;}
   .commitment-strip{
     margin-top:44px;
     border-top:1px solid rgba(251,252,250,0.18);
@@ -343,42 +367,49 @@
   /* ===== CONTACT ===== */
   .contact-grid{
     display:grid; grid-template-columns:1fr 1fr; gap:0;
-    border:1px solid var(--line-strong);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
     background:var(--white);
+    box-shadow:var(--shadow-md);
+    overflow:hidden;
   }
-  .contact-col{padding:40px;}
-  .contact-col.form-col{border-left:1px solid var(--line-strong); background:var(--paper);}
+  .contact-col{padding:44px;}
+  .contact-col.form-col{border-left:1px solid var(--line); background:var(--paper);}
   @media (max-width:860px){
     .contact-grid{grid-template-columns:1fr;}
-    .contact-col.form-col{border-left:none; border-top:1px solid var(--line-strong);}
+    .contact-col.form-col{border-left:none; border-top:1px solid var(--line);}
   }
-  .contact-row{display:flex; gap:14px; padding:14px 0; border-bottom:1px dashed var(--line);}
+  .contact-row{display:flex; gap:14px; padding:15px 0; border-bottom:1px solid var(--line);}
   .contact-row:last-child{border-bottom:none;}
-  .contact-row .k{font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--red); width:110px; flex-shrink:0; padding-top:2px;}
+  .contact-row .k{font-family:var(--body); font-weight:700; font-size:12px; letter-spacing:0.03em; text-transform:uppercase; color:var(--red); width:110px; flex-shrink:0; padding-top:2px;}
   .contact-row .v{font-size:15px;}
   .contact-row .v a{text-decoration:none; border-bottom:1px solid var(--line-strong);}
 
-  form{display:flex; flex-direction:column; gap:16px;}
-  form label{font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-soft); margin-bottom:6px; display:block;}
+  form{display:flex; flex-direction:column; gap:18px;}
+  form label{font-family:var(--body); font-weight:600; font-size:13px; letter-spacing:0.01em; color:var(--ink-soft); margin-bottom:7px; display:block;}
   form input, form select, form textarea{
     width:100%;
     font-family:var(--body); font-size:15px;
-    padding:12px 14px;
+    padding:13px 15px;
     background:var(--white);
     border:1px solid var(--line-strong);
+    border-radius:var(--radius-sm);
     color:var(--ink);
+    transition:border-color 0.15s, box-shadow 0.15s;
   }
   form textarea{resize:vertical; min-height:100px;}
-  form input:focus, form select:focus, form textarea:focus{border-color:var(--red);}
+  form input:focus, form select:focus, form textarea:focus{border-color:var(--red); outline:none; box-shadow:0 0 0 3px rgba(200,16,46,0.1);}
   .form-note{font-size:12.5px; color:var(--ink-soft); margin-top:-4px;}
 
   /* ===== FOOTER ===== */
   footer{
-    background:var(--ink); color:rgba(236,239,234,0.6);
-    padding:36px 0;
-    font-family:var(--mono); font-size:12.5px;
+    background:var(--ink); color:rgba(236,239,234,0.55);
+    padding:32px 0;
+    font-family:var(--body); font-size:13.5px;
   }
   .footer-row{display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;}
+  .footer-brand{display:flex; align-items:center; gap:10px;}
+  .footer-brand img{height:28px; width:auto;}
   footer a{color:rgba(236,239,234,0.8); text-decoration:none;}
   footer a:hover{color:var(--yellow);}
 </style>
@@ -388,7 +419,7 @@
 <header class="site">
   <div class="wrap nav">
     <a href="#top" class="brand">
-      <img src="assets/logo.png" alt="Ndenzisizwe Holdings logo">
+      <img src="logo.png" alt="Ndenzisizwe Holdings logo">
       <span class="brand-text">NDENZISIZWE HOLDINGS (PTY) LTD</span>
     </a>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">MENU</button>
@@ -413,8 +444,7 @@
         <h1>Maintenance, supply &amp; logistics support for South Africa's <span class="accent">mines &amp; plants.</span></h1>
         <p class="lede">Ndenzisizwe Holdings delivers skilled personnel, industrial supplies, and end-to-end logistics for quarry, crushing plant and mine-site operations — built for maximum uptime and safety-first execution.</p>
         <div class="hero-ctas">
-          <a href="#contact" class="btn primary">Request a quote</a>
-          <a href="#divisions" class="btn ghost">View our divisions</a>
+          <a href="#divisions" class="btn primary">View our divisions</a>
         </div>
       </div>
       <div class="nameplate">
@@ -444,7 +474,7 @@
       </div>
       <div>
         <div class="stat-row">
-          <div class="stat"><div class="num">04</div><div class="label">Primary service divisions</div></div>
+          <div class="stat"><div class="num">05</div><div class="label">Primary service divisions</div></div>
           <div class="stat"><div class="num">10</div><div class="label">Total service categories</div></div>
           <div class="stat"><div class="num">24/7</div><div class="label">Breakdown support capability</div></div>
           <div class="stat"><div class="num">2024</div><div class="label">Registered entity</div></div>
@@ -473,8 +503,6 @@
         <ul class="service-list">
           <li>General plant maintenance</li>
           <li>Labour hire</li>
-          <li>Building maintenance</li>
-          <li>Civil works &amp; civil engineering</li>
           <li>Conveyor belt splicing</li>
           <li>Material-handling maintenance</li>
           <li>Liners, bolts &amp; mill liners</li>
@@ -540,6 +568,20 @@
           <li>Procurement &amp; vendor management</li>
           <li>Supply-chain analytics</li>
           <li>Transport Management Systems (TMS)</li>
+        </ul>
+      </div>
+
+      <div class="division">
+        <div class="division-head">
+          <span class="division-code">DIV. E</span>
+          <h3>Construction</h3>
+        </div>
+        <p class="tagline">Civil and building works delivered with the same safety-first, quality-focused standards as our plant maintenance teams.</p>
+        <ul class="service-list">
+          <li>Construction</li>
+          <li>Civil works &amp; civil engineering</li>
+          <li>Building maintenance</li>
+          <li>Project management support</li>
         </ul>
       </div>
 
@@ -726,7 +768,10 @@
 
 <footer>
   <div class="wrap footer-row">
-    <div>© <span id="year"></span> Ndenzisizwe Holdings (Pty) Ltd. Reg. 2024/239791/07.</div>
+    <div class="footer-brand">
+      <img src="logo.png" alt="Ndenzisizwe Holdings logo">
+      <span>© <span id="year"></span> Ndenzisizwe Holdings (Pty) Ltd. Reg. 2024/239791/07.</span>
+    </div>
     <div><a href="tel:0818974758">081 897 4758</a> · <a href="mailto:ndenzisizwe@gmail.com">ndenzisizwe@gmail.com</a></div>
   </div>
 </footer>
